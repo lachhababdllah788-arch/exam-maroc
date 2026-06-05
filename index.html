@@ -435,10 +435,10 @@
 
         // وظيفة التحميل
         function downloadExam(filename, title) {
-            // في الواقع، الملفات تحتاج إلى أن تكون موجودة على السيرفر
-            // هذا مجرد محاكاة
-            alert(`📥 جاري تحميل: ${title}\n\nملاحظة: لعمل التحميل الفعلي، يجب رفع ملفات PDF إلى السيرفر. حالياً هذا عرض توضيحي.`);
-            
+    // الملف موجود في نفس مجلد الموقع
+    const downloadUrl = `/${filename}`;
+    window.open(downloadUrl, '_blank');
+}
             // تسجيل إحصائيات التحميل (لحساب الأرباح)
             let downloads = JSON.parse(localStorage.getItem('examDownloads') || '[]');
             downloads.push({
